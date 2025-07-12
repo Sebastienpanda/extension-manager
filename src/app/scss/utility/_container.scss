@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    margin-inline: auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 40em) { /* ~640px */
+    .container {
+        max-width: 38em;
+    }
+}
+
+@media (min-width: 52em) { /* ~832px */
+    .container {
+        max-width: 50em;
+    }
+}
+
+@media (min-width: 64em) { /* ~1024px */
+    .container {
+        max-width: 60em;
+    }
+}
+
+@media (min-width: 75em) { /* ~1200px */
+    .container {
+        max-width: 70em;
+    }
+}
+
+.flex-test {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

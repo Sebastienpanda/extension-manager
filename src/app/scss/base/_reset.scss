@@ -1,0 +1,75 @@
+/* Reset CSS - Version complète */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, main, nav, section, summary {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Remove list styles */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* Remove quotes from blockquotes and q */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: '';
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Form elements */
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+/* Buttons and links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
