@@ -54,7 +54,7 @@
 
             &:hover {
                 background-color: var(--colors-red-700);
-                border: none;
+                border: 1px solid var(--colors-red-700);
                 color: var(--colors-neutral-0);
             }
         }

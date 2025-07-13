@@ -1,4 +1,4 @@
-import {Component, inject, OnInit, signal} from '@angular/core';
+import {Component, computed, inject, OnInit, signal} from '@angular/core';
 import {Card} from '@shared/components/ui/card/card';
 import {Extension, ExtensionService} from '@core/extensions/extension-service';
 
@@ -14,6 +14,7 @@ import {Extension, ExtensionService} from '@core/extensions/extension-service';
 export default class Home implements OnInit {
     protected readonly extensions = signal<Extension[]>([]);
     private readonly extensionService = inject(ExtensionService);
+    protected readonly selectedFilter = signal<'all' | 'active' | 'inactive'>('all');
 
     ngOnInit() {
         this.extensionService.getExtensions().subscribe({
@@ -24,5 +25,36 @@ export default class Home implements OnInit {
                 console.error('Erreur de chargement des extensions', err);
             }
         });
+    }
+
+    protected readonly filteredExtensions = computed(() => {
+        const filter = this.selectedFilter();
+        const all = this.extensions();
+
+        switch (filter) {
+            case 'active':
+                return all.filter(ext => ext.isActive);
+            case 'inactive':
+                return all.filter(ext => !ext.isActive);
+            default:
+                return all;
+        }
+    });
+
+    protected setFilter(value: 'all' | 'active' | 'inactive') {
+        this.selectedFilter.set(value);
+    }
+
+    protected toggleActive(id: number, isActive: boolean) {
+        const updated = this.extensions().map(ext =>
+            ext.id === id ? {...ext, isActive} : ext
+        );
+
+        this.extensions.set(updated);
+    }
+
+    protected removeExtension(id: number) {
+        const updated = this.extensions().filter(ext => ext.id !== id);
+        this.extensions.set(updated);
     }
 }

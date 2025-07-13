@@ -1,6 +1,50 @@
+@use "utility/mixins" as *;
+
 .grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+}
+
+.top {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .tag-container {
+        display: flex;
+        gap: 12px;
+
+        button {
+            padding: var(--spacing-100) var(--spacing-200);
+            background-color: var(--colors-neutral-0);
+            border: 1px solid var(--colors-neutral-200);
+            border-radius: var(--radius-full);
+            transition: background-color 300ms ease-in-out, color 300ms ease-in-out, border 300ms ease-in-out;
+
+            &.active {
+                background-color: var(--colors-red-700);
+                border: 1px solid var(--colors-red-700);
+                color: var(--colors-neutral-0);
+            }
+
+            &:hover {
+                background-color: var(--colors-red-700);
+                border: 1px solid var(--colors-red-700);
+                color: var(--colors-neutral-0);
+            }
+        }
+    }
+}
+
+.empty-message {
+    color: var(--colors-neutral-600);
 }

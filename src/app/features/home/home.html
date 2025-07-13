@@ -1,13 +1,31 @@
 <main class="container">
+    <section class="top">
+        <h1 class="h1">Extensions List</h1>
+        <div class="tag-container">
+            <button [class.active]="selectedFilter() === 'all'"
+                    (click)="setFilter('all')">All
+            </button>
+            <button [class.active]="selectedFilter() === 'active'"
+                    (click)="setFilter('active')">Active
+            </button>
+            <button [class.active]="selectedFilter() === 'inactive'"
+                    (click)="setFilter('inactive')">Inactive
+            </button>
+        </div>
+    </section>
     <section class="grid">
-        @for (extension of extensions(); track extension.id) {
+        @for (extension of filteredExtensions(); track extension.id) {
             <app-card
                 [name]="extension.name"
                 [description]="extension.description"
                 [icon]="extension.logo"
                 [id]="extension.id"
                 [isActive]="extension.isActive"
+                (toggleChange)="toggleActive($event.id, $event.isActive)"
+                (remove)="removeExtension($event)"
             />
+        } @empty {
+            <p class="empty-message">Aucune extension</p>
         }
     </section>
 </main>
