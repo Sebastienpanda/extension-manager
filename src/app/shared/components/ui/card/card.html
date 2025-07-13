@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="header">
+        <img [src]="icon()" [alt]="name()" class="icon"/>
+        <div>
+            <h2 class="h2">
+                {{ name() }}
+            </h2>
+            <p class="description">
+                {{ description() }}
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <button (click)="onRemove()" class="btn-remove">
+            Remove
+        </button>
+        <label class="switch">
+            <input type="checkbox" [checked]="isActive()" (change)="onToggleChange()"/>
+            <span class="slider"></span>
+        </label>
+    </div>
+</div>

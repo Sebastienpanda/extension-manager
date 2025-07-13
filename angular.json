@@ -28,7 +28,12 @@
                         ],
                         "styles": [
                             "src/app/scss/main.scss"
-                        ]
+                        ],
+                        "stylePreprocessorOptions": {
+                            "includePaths": [
+                                "src/app/scss"
+                            ]
+                        }
                     },
                     "configurations": {
                         "production": {

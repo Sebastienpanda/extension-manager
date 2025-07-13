@@ -1,0 +1,13 @@
+<main class="container">
+    <section class="grid">
+        @for (extension of extensions(); track extension.id) {
+            <app-card
+                [name]="extension.name"
+                [description]="extension.description"
+                [icon]="extension.logo"
+                [id]="extension.id"
+                [isActive]="extension.isActive"
+            />
+        }
+    </section>
+</main>

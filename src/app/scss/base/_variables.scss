@@ -1,0 +1,46 @@
+:root {
+    --colors-neutral-900: oklch(0.216 0.08 266.909);
+    --colors-neutral-800: oklch(0.271 0.031 270.845);
+    --colors-neutral-700: oklch(0.336 0.038 270.013);
+    --colors-neutral-600: oklch(0.466 0.027 271.641);
+    --colors-neutral-300: oklch(0.83 0 89.876);
+    --colors-neutral-200: oklch(0.91 0.029 259.588);
+    --colors-neutral-100: oklch(0.946 0 89.876);
+    --colors-neutral-0: oklch(0.993 0.003 228.783);
+
+    --colors-red-400: oklch(0.67 0.186 26.394);
+    --colors-red-500: oklch(0.611 0.189 27.243);
+    --colors-red-700: oklch(0.535 0.2 28.918);
+
+    --color-light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --color-dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+    --radius-0: 0rem;
+    --radius-4: 0.25rem;
+    --radius-6: 0.375rem;
+    --radius-8: 0.5rem;
+    --radius-10: 0.625rem;
+    --radius-12: 0.75rem;
+    --radius-16: 1rem;
+    --radius-20: 1.25rem;
+    --radius-24: 1.5rem;
+    --radius-full: 62.438rem;
+
+    --spacing-0: 0rem;
+    --spacing-025: 0.125rem;
+    --spacing-050: 0.25rem;
+    --spacing-075: 0.375rem;
+    --spacing-100: 0.5rem;
+    --spacing-125: 0.625rem;
+    --spacing-150: 0.75rem;
+    --spacing-200: 1rem;
+    --spacing-250: 1.25rem;
+    --spacing-300: 1.5rem;
+    --spacing-350: 1.75rem;
+    --spacing-400: 2rem;
+    --spacing-450: 2.25rem;
+    --spacing-500: 2.5rem;
+    --spacing-600: 3rem;
+    --spacing-800: 4rem;
+    --spacing-1000: 5rem;
+}

@@ -1,0 +1,114 @@
+@use "utility/mixins" as *;
+
+:host {
+    width: 343px;
+    @include tablet {
+        max-width: 346px;
+    }
+
+    @include laptop {
+        max-width: 382px;
+    }
+}
+
+.card {
+    border-radius: var(--radius-20);
+    border: 1px solid var(--colors-neutral-200);
+    background: var(--colors-neutral-0);
+    box-shadow: 0 2px 2px 0 rgba(194, 206, 225, 0.20), 0 1px 5px 1px rgba(194, 206, 225, 0.22);
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .header {
+        display: flex;
+        gap: 1rem;
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .description {
+            margin-top: 8px;
+            color: var(--colors-neutral-600);
+        }
+    }
+
+    .footer {
+        margin-top: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .btn-remove {
+            border-radius: var(--radius-full);
+            border: 1px solid var(--colors-neutral-300);
+            padding: var(--spacing-100) var(--spacing-200);
+            color: var(--colors-neutral-900);
+            font-weight: 500;
+            transition: background-color 300ms ease-in-out, color 300ms ease-in-out, border 300ms ease-in-out;
+
+            &:hover {
+                background-color: var(--colors-red-700);
+                border: none;
+                color: var(--colors-neutral-0);
+            }
+        }
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 20px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:focus + .slider {
+                box-shadow: 0 0 0 2px var(--colors-red-500);
+            }
+
+            &:checked + .slider {
+                background-color: var(--colors-red-700);
+
+                &::before {
+                    transform: translateX(16px);
+                }
+            }
+
+            &:not(:checked) + .slider {
+                background-color: var(--colors-neutral-300);
+            }
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            border: 2px solid transparent;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: transform 300ms ease-in-out;
+            border-radius: var(--radius-full);
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 16px;
+                width: 16px;
+                background-color: white;
+                transition: transform 300ms ease-in-out;
+                border-radius: 50%;
+            }
+        }
+    }
+}
