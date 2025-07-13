@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+    padding-bottom: 64px;
 }
 
 .top {
@@ -40,6 +41,25 @@
                 background-color: var(--colors-red-700);
                 border: 1px solid var(--colors-red-700);
                 color: var(--colors-neutral-0);
+            }
+        }
+
+        &.dark {
+            button {
+                background-color: var(--colors-neutral-700);
+                border: 1px solid var(--colors-neutral-600);
+
+                &.active {
+                    background-color: var(--colors-red-400);
+                    border: 1px solid var(--colors-red-400);
+                    color: var(--colors-neutral-900);
+                }
+
+                &:hover {
+                    background-color: var(--colors-red-400);
+                    border: 1px solid var(--colors-red-400);
+                    color: var(--colors-neutral-900);
+                }
             }
         }
     }

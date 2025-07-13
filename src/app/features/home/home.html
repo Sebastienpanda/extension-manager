@@ -1,7 +1,7 @@
 <main class="container">
     <section class="top">
         <h1 class="h1">Extensions List</h1>
-        <div class="tag-container">
+        <div class="tag-container" [class.dark]="isDark()">
             <button [class.active]="selectedFilter() === 'all'"
                     (click)="setFilter('all')">All
             </button>

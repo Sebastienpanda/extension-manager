@@ -1,6 +1,7 @@
 import {Component, computed, inject, OnInit, signal} from '@angular/core';
 import {Card} from '@shared/components/ui/card/card';
 import {Extension, ExtensionService} from '@core/extensions/extension-service';
+import {ThemeService} from '@core/theme/theme-service';
 
 @Component({
     selector: 'app-home',
@@ -12,8 +13,10 @@ import {Extension, ExtensionService} from '@core/extensions/extension-service';
 })
 
 export default class Home implements OnInit {
-    protected readonly extensions = signal<Extension[]>([]);
     private readonly extensionService = inject(ExtensionService);
+    protected readonly isDark = inject(ThemeService).isDark;
+
+    protected readonly extensions = signal<Extension[]>([]);
     protected readonly selectedFilter = signal<'all' | 'active' | 'inactive'>('all');
 
     ngOnInit() {

@@ -17,9 +17,11 @@ footer, header, main, nav, section, summary {
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
-    line-height: 1.5;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 140%;
+    color: var(--colors-neutral-900);
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -72,14 +74,6 @@ img, video {
     display: block;
 }
 
-*, html, body {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.5px;
-    line-height: 140%;
-    color: var(--colors-neutral-900);
-}
-
 h1 {
     line-height: 100%;
     letter-spacing: -1px;
@@ -100,4 +94,14 @@ h3 {
     letter-spacing: -0.3px;
     line-height: 140%;
     font-size: 1.25rem;
+}
+
+body {
+    background: var(--color-light-gradient);
+    transition: background-color 350ms ease-in-out, color 350ms ease-in-out, box-shadow 350ms ease-in-out;
+}
+
+body.dark {
+    background: var(--color-dark-gradient);
+    color: var(--colors-neutral-0);
 }
