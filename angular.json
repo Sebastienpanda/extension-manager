@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "angular-template-scss": {
+        "extension-manager": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -63,10 +63,10 @@
                     "builder": "@angular/build:dev-server",
                     "configurations": {
                         "production": {
-                            "buildTarget": "angular-template-scss:build:production"
+                            "buildTarget": "extension-manager:build:production"
                         },
                         "development": {
-                            "buildTarget": "angular-template-scss:build:development"
+                            "buildTarget": "extension-manager:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
